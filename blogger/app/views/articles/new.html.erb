@@ -1,0 +1,28 @@
+<h1>Create a New Article</h1>
+
+<%# form_for is a Rails helper method that takes a parameter, @article, and a black with the form fields. This line creates a form for @article, name it f, and add the following elements to it (which are within the loop) %>
+<%= form_for(@article) do |f| %>
+  <ul>
+	  <% @article.errors.full_messages.each do |error| %>
+	    <li><%= error %></li>
+	  <% end %>
+  </ul>
+  <p>
+  	<%# #label creates an HTML label for a field %>
+    <%= f.label :title %><br />
+
+    <%# Creates a single-line text box named title %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+
+    <%# Creates a multi-line text box named body %>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+
+  	<%# Creates a button labeled "Create" %>
+    <%= f.submit %>
+  </p>
+<% end %>

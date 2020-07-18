@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <p class="flash"> <%= flash.notice %></p>
     <%= yield %>
   </body>
 </html>
+
+<!-- Used to wrap multiple view templates in your application -->
+<!-- Layours can be created specific to each controller, but one is normally used to wrap every view template in the application -->

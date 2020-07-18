@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 	
+	root to: "articles#index" # defaults root view to the index view
+
 	# Tells Rails an articles resource exists and the router should 
 	# expect requests to follow the RESTful web interaction model.
 	# Router will understand that something like

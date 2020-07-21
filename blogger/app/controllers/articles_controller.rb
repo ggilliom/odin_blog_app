@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
 	include ArticlesHelper
 
+	before_action :require_login, except: [:index, :show]
+
 	def index
 		# @ makes it an instance variable. It is accessible
 		# from both the controller and the view. Normally, it's

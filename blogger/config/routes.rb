@@ -16,7 +16,8 @@ Rails.application.routes.draw do
 	resources :authors
 	resources :author_sessions, only: [ :new, :create, :destroy ]
 
-	get "login" => "author_sessions#new"
-	get "logout" => "author_sessions#destroy"
+	get "login" => "author_sessions#new" # adds login_path as a path
+	get "logout" => "author_sessions#destroy" # adds logout_path as a path
+	# get "testing" => "articles#new" # adds testing_path as a path
 
 end

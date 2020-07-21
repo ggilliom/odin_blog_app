@@ -10562,3 +10562,326 @@ Processing by ArticlesController#index as HTML
 Completed 200 OK in 59ms (Views: 55.5ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for ::1 at 2020-07-21 16:56:47 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/garrettgilliom/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  Rendered articles/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 292ms (Views: 273.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/login" for ::1 at 2020-07-21 16:56:52 -0400
+Processing by AuthorSessionsController#new as HTML
+  Rendering author_sessions/new.html.erb within layouts/application
+  Rendered author_sessions/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 65ms (Views: 57.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/author_sessions" for ::1 at 2020-07-21 16:56:57 -0400
+Processing by AuthorSessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4P47pcyT4tIRG8wOem0U5lLp6ydYLhOSGDZD+rUXWVHuJmvlzoIc9TOsTZ+g2pdp3yuDTO0vdsPfgKPqr23USw==", "email"=>"garrettgilliom@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."email" = 'garrettgilliom@gmail.com' ORDER BY "authors"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/author_sessions_controller.rb:8
+Redirected to http://localhost:3000/authors
+Completed 302 Found in 147ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/authors" for ::1 at 2020-07-21 16:56:58 -0400
+Processing by AuthorsController#index as HTML
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/garrettgilliom/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT "authors".* FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:15
+  Rendered authors/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-07-21 16:57:00 -0400
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:15
+  Rendered articles/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 100ms (Views: 98.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/testing" for ::1 at 2020-07-21 16:57:03 -0400
+Processing by ArticlesController#new as HTML
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/garrettgilliom/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (35.0ms)
+  Rendered articles/new.html.erb within layouts/application (36.6ms)
+Completed 200 OK in 82ms (Views: 79.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2020-07-21 16:57:07 -0400
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:15
+  Rendered articles/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 61ms (Views: 58.1ms | ActiveRecord: 0.6ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rake:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rake:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rake:4
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rake:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rake:4
+Started GET "/" for ::1 at 2020-07-21 17:06:46 -0400
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:15
+  Rendered articles/index.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 66ms (Views: 57.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2020-07-21 17:06:48 -0400
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:15
+  Rendered articles/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 82ms (Views: 79.7ms | ActiveRecord: 0.6ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rake:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rake:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rake:4
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rake:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rake:4
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/garrettgilliom/.rbenv/versions/2.7.0/bin/rake:23
+Migrating to AddViewCountToArticles (20200721211358)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/garrettgilliom/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "articles" ADD "view_count" integer[0m
+  ↳ db/migrate/20200721211358_add_view_count_to_articles.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200721211358"]]
+  ↳ /Users/garrettgilliom/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/garrettgilliom/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/garrettgilliom/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/garrettgilliom/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/garrettgilliom/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/garrettgilliom/.rbenv/versions/2.7.0/bin/rake:23
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2020-07-21 17:17:42 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/garrettgilliom/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:15
+  Rendered articles/index.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 326ms (Views: 302.9ms | ActiveRecord: 2.4ms)
+
+
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/articles/new" for ::1 at 2020-07-21 17:30:10 -0400
+Processing by ArticlesController#new as HTML
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/garrettgilliom/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/_form.html.erb (22.0ms)
+  Rendered articles/new.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 130ms (Views: 64.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/articles" for ::1 at 2020-07-21 17:30:31 -0400
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FJhRn6lGaEsc/PKKBwK/ZkhWUovyc7SM1PY4EMihzYkXaDxYw9Be09GsalVqZt1vKPpmenMcIU/QOFl8VB1F3w==", "article"=>{"title"=>"View Article", "body"=>"This article is to test the view count", "tag_list"=>"views, ruby, counting"}, "commit"=>"Create Article"}
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ /Users/garrettgilliom/.rbenv/versions/2.7.0/lib/ruby/gems/2.7.0/gems/activerecord-5.2.4.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = ? LIMIT ?[0m  [["name", "views"], ["LIMIT", 1]]
+  ↳ app/models/article.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/article.rb:17
+  [1m[36mTag Create (0.7ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "views"], ["created_at", "2020-07-21 21:30:31.612709"], ["updated_at", "2020-07-21 21:30:31.612709"]]
+  ↳ app/models/article.rb:17
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/article.rb:17
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = ? LIMIT ?[0m  [["name", "ruby"], ["LIMIT", 1]]
+  ↳ app/models/article.rb:17
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT  "tags".* FROM "tags" WHERE "tags"."name" = ? LIMIT ?[0m  [["name", "counting"], ["LIMIT", 1]]
+  ↳ app/models/article.rb:17
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/article.rb:17
+  [1m[36mTag Create (0.5ms)[0m  [1m[32mINSERT INTO "tags" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "counting"], ["created_at", "2020-07-21 21:30:31.620293"], ["updated_at", "2020-07-21 21:30:31.620293"]]
+  ↳ app/models/article.rb:17
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/article.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:37
+  [1m[36mArticle Create (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("title", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "View Article"], ["body", "This article is to test the view count"], ["created_at", "2020-07-21 21:30:31.642784"], ["updated_at", "2020-07-21 21:30:31.642784"]]
+  ↳ app/controllers/articles_controller.rb:37
+  [1m[36mTagging Create (0.4ms)[0m  [1m[32mINSERT INTO "taggings" ("tag_id", "article_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 12], ["article_id", 15], ["created_at", "2020-07-21 21:30:31.644985"], ["updated_at", "2020-07-21 21:30:31.644985"]]
+  ↳ app/controllers/articles_controller.rb:37
+  [1m[36mTagging Create (0.1ms)[0m  [1m[32mINSERT INTO "taggings" ("tag_id", "article_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 1], ["article_id", 15], ["created_at", "2020-07-21 21:30:31.646740"], ["updated_at", "2020-07-21 21:30:31.646740"]]
+  ↳ app/controllers/articles_controller.rb:37
+  [1m[36mTagging Create (0.1ms)[0m  [1m[32mINSERT INTO "taggings" ("tag_id", "article_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tag_id", 13], ["article_id", 15], ["created_at", "2020-07-21 21:30:31.647892"], ["updated_at", "2020-07-21 21:30:31.647892"]]
+  ↳ app/controllers/articles_controller.rb:37
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:37
+Redirected to http://localhost:3000/articles/15
+Completed 302 Found in 52ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/articles/15" for ::1 at 2020-07-21 17:30:31 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:17
+Completed 500 Internal Server Error in 92ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `increment' for #<ArticlesController:0x00007f981bfa4e88>):
+  
+app/controllers/articles_controller.rb:24:in `show'
+Started GET "/articles/15" for ::1 at 2020-07-21 17:31:10 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:17
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mTag Load (0.3ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 15]]
+  ↳ app/views/articles/show.html.erb:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 15]]
+  ↳ app/views/articles/show.html.erb:15
+  Rendered collection of articles/_comment.html.erb [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (3.6ms)
+  [1m[36mAuthor Load (1.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:20
+  Rendered articles/show.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 175ms (Views: 131.6ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/articles/15" for ::1 at 2020-07-21 17:31:14 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:17
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 15]]
+  ↳ app/views/articles/show.html.erb:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 15]]
+  ↳ app/views/articles/show.html.erb:15
+  Rendered collection of articles/_comment.html.erb [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (1.9ms)
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:20
+  Rendered articles/show.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 68ms (Views: 63.8ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 4]]
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" LIMIT ?[0m  [["LIMIT", 11]]
+Started POST "/articles/15/comments" for ::1 at 2020-07-21 17:37:20 -0400
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ugpBTVT/bX6u5js6v0aHReeJ54fL6+mv1yTVKt3mFYvEJDsQVa+Ys8qC6/+250r7SPaXaPQ2A3z/t3uq3+fZ3A==", "comment"=>{"author_name"=>"Garrett", "body"=>"Oof heard that didn't work – yikes"}, "commit"=>"Submit", "article_id"=>"15"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:9
+  [1m[36mArticle Load (0.1ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:9
+  [1m[36mComment Create (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("author_name", "body", "article_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["author_name", "Garrett"], ["body", "Oof heard that didn't work – yikes"], ["article_id", 15], ["created_at", "2020-07-21 21:37:20.834690"], ["updated_at", "2020-07-21 21:37:20.834690"]]
+  ↳ app/controllers/comments_controller.rb:9
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:9
+Redirected to http://localhost:3000/articles/15
+Completed 302 Found in 40ms (ActiveRecord: 5.6ms)
+
+
+Started GET "/articles/15" for ::1 at 2020-07-21 17:37:20 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:17
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 15]]
+  ↳ app/views/articles/show.html.erb:4
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 15]]
+  ↳ app/views/articles/show.html.erb:15
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 15]]
+  ↳ app/views/articles/show.html.erb:16
+  Rendered collection of articles/_comment.html.erb [1 times] (11.9ms)
+  Rendered comments/_form.html.erb (2.3ms)
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:20
+  Rendered articles/show.html.erb within layouts/application (47.3ms)
+Completed 200 OK in 77ms (Views: 72.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2020-07-21 17:37:25 -0400
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:15
+  Rendered articles/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 68ms (Views: 64.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/articles/4" for ::1 at 2020-07-21 17:37:31 -0400
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:17
+  Rendering articles/show.html.erb within layouts/application
+  [1m[36mTag Load (0.4ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "taggings" ON "tags"."id" = "taggings"."tag_id" WHERE "taggings"."article_id" = ?[0m  [["article_id", 4]]
+  ↳ app/views/articles/show.html.erb:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 4]]
+  ↳ app/views/articles/show.html.erb:15
+  Rendered collection of articles/_comment.html.erb [0 times] (0.0ms)
+  Rendered comments/_form.html.erb (2.6ms)
+  [1m[36mAuthor Load (0.5ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/show.html.erb:20
+  Rendered articles/show.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 82ms (Views: 77.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-07-21 17:37:34 -0400
+Processing by ArticlesController#index as HTML
+  Rendering articles/index.html.erb within layouts/application
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  ↳ app/views/articles/index.html.erb:4
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/articles/index.html.erb:15
+  Rendered articles/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 59ms (Views: 56.0ms | ActiveRecord: 0.5ms)
+
+

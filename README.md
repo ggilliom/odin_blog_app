@@ -1,8 +1,8 @@
 # odin\_blog\_app
 
-###Blog App project through Odin
+### Blog App project through Odin
 
-####Features:
+#### Features:
 
 * Articles
 	* Attachments (photos) allowed
